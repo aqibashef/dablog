@@ -68,7 +68,7 @@ function wpwagon_load_scripts() {
 	
 	// Fonts
 	wp_enqueue_style('default_body_font', 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&subset=latin,latin-ext');
-	wp_enqueue_style('default_heading_font', 'https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic');
+	wp_enqueue_style('default_heading_font', 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
 	
 	// JS
 	wp_enqueue_script('jquery');

@@ -1,37 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12'); ?>>
-					
-	<div class="post-header">
-		
-		<div class="author_info clearfix">
-			<?php if(!get_theme_mod('ys_post_share_author_avatar')) : ?>		
-			<div class="author_avatar">
-				<?php echo get_avatar( get_the_author_meta('ID'), 60); ?>
-			</div>
-			<?php endif; ?>
 
-			<?php if(!get_theme_mod('ys_post_share_author')) : ?>
-			<span class="post-share-box share-author">
-				<?php the_author_posts_link(); ?>
-			</span>
-			<?php endif; ?>
-			
-			<?php if(!get_theme_mod('ys_post_cat')) : ?>
-			<i>in</i> <span class="cat"><?php the_category(' '); ?></span>
-			<?php endif; ?>
-
-			<?php if(!get_theme_mod('ys_post_date')) : ?>
-			<div class="post-date"><?php _e( 'Posted on', 'wpwagon' ); ?> <?php the_time( get_option('date_format') ); ?></div>
-			<?php endif; ?>
-		</div>
-		
-		<?php if(is_single()) : ?>
-			<h1><?php the_title(); ?></h1>
-		<?php else : ?>
-			<h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-		<?php endif; ?>
-		
-	</div>
-	
 	<?php if(has_post_format('gallery')) : ?>
 	
 		<?php $images = get_post_meta( $post->ID, '_format_gallery_images', true ); ?>
@@ -89,6 +57,34 @@
 		<?php endif; ?>
 		
 	<?php endif; ?>
+
+    <div class="post-header text-center">
+
+        <div class="cat_info clearfix">
+            <?php if(!get_theme_mod('ys_post_cat')) : ?>
+                <span class="cat"><?php the_category(' '); ?></span>
+            <?php endif; ?>
+        </div>
+
+        <?php if(is_single()) : ?>
+            <h1><?php the_title(); ?></h1>
+        <?php else : ?>
+            <a href="<?php echo get_permalink(); ?>"><h2 class="header-title"><?php the_title(); ?></h2></a>
+        <?php endif; ?>
+
+        <?php if(!get_theme_mod('ys_post_share_author')) : ?>
+            <span class="post-share-box share-author">
+				By <?php the_author_posts_link(); ?>
+			</span> .
+        <?php endif; ?>
+        <?php if(get_comments_number() >= 0): ?>
+            <span class="post-comment-number"> <?php echo get_comments_number(); ?> <?php echo __('Comments') ?></span> .
+        <?php endif; ?>
+        <?php if(!get_theme_mod('ys_post_date')) : ?>
+            <div class="post-date"><?php the_time( get_option('date_format') ); ?></div>
+        <?php endif; ?>
+
+    </div>
 	
 	<div class="post-entry">
 		
@@ -101,11 +97,11 @@
 			<?php if(get_theme_mod('ys_post_summary') == 'excerpt') : ?>
 				
 				<p><?php echo ys_string_limit_words(get_the_excerpt(), 80); ?>&hellip;</p>
-				<p><a href="<?php echo get_permalink() ?>" class="more-link"><span class="more-button"><?php _e( 'Continue Reading <span>&raquo;</span>', 'wpwagon' ); ?></span></a>
+				<p class="text-center"><a href="<?php echo get_permalink() ?>" class="more-link"><span class="more-button"><?php _e( 'View full post', 'wpwagon' ); ?></span></a>
 				
 			<?php else : ?>
 				
-				<?php the_content(__('Continue Reading<span class="more-line"></span>', 'wpwagon')); ?>
+				<?php the_content(__('View full post <span class="more-line"></span>', 'wpwagon')); ?>
 				
 			<?php endif; ?>
 		
@@ -124,16 +120,15 @@
 		<?php endif; ?>
 		
 	</div>
-	
-	<?php if(get_theme_mod('ys_post_comment_link') && get_theme_mod('ys_post_share') && get_theme_mod('ys_post_share_author')) : else : ?>	
+    <?php if(is_single()): ?>
+    <?php if(get_theme_mod('ys_post_comment_link') && get_theme_mod('ys_post_share') && get_theme_mod('ys_post_share_author')) : else : ?>
 	<div class="post-share row">
-	
-		<?php if(!get_theme_mod('ys_post_comment_link')) : ?>
+        <?php if(!get_theme_mod('ys_post_comment_link')) : ?>
 		<div class="col-sm-6 post-share-box share-comments">
 			<?php comments_popup_link( '<span>0</span> Comments', '<span>1</span> Comment', '<span>%</span> Comments', '', ''); ?>
 		</div>
 		<?php endif; ?>
-		
+
 		<?php if(!get_theme_mod('ys_post_share')) : ?>
 		<div class="col-sm-6 post-share-box share-buttons">
 			<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook"></i></a>
@@ -143,11 +138,13 @@
 			<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
 		</div>
 		<?php endif; ?>
-		
+
 	</div>
 	<?php endif; ?>
-	
-	<?php if(!get_theme_mod('ys_post_author')) : ?>
+    <?php endif; ?>
+
+
+    <?php if(!get_theme_mod('ys_post_author')) : ?>
 	<?php if(is_single()) : ?>
 		<?php get_template_part('inc/templates/about_author'); ?>
 	<?php endif; ?>

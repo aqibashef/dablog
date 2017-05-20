@@ -26,11 +26,24 @@
 			<div class="feat-item" style="background-image:url(<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'slider-thumb' ); if(!$image) { echo get_template_directory_uri() . '/img/slider-default.png'; } else { echo $image[0]; } ?>);">
 				
 				<div class="feat-overlay">
-					<div class="feat-inner">
-						<span class="cat"><?php the_category(' '); ?></span>
-						<h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<a href="<?php echo get_permalink(); ?>" class="btn feat-more"><?php _e( 'Read More', 'themewagon' ); ?></a>
-					</div>
+					<div class="feat-inner text-center">
+                        <div class="feat-inner-wrapper">
+                            <span class="cat"><?php the_category(' '); ?></span>
+                            <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <?php if(!get_theme_mod('ys_post_share_author')) : ?>
+                                <span class="post-share-box share-author">
+                                    By <?php the_author_posts_link(); ?>
+                                </span> .
+                            <?php endif; ?>
+                            <?php if(get_comments_number() >= 0): ?>
+                                <span class="post-comment-number"> <?php echo get_comments_number(); ?> <?php echo __('Comments') ?></span> .
+                            <?php endif; ?>
+                            <?php if(!get_theme_mod('ys_post_date')) : ?>
+                                <div class="post-date"><?php the_time( get_option('date_format') ); ?></div>
+                            <?php endif; ?>
+                            <a href="<?php echo get_permalink(); ?>" class="btn feat-more"><?php _e( 'View full post', 'themewagon' ); ?></a>
+                        </div>
+                    </div>
 				</div>
 				
 			</div>
