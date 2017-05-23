@@ -74,7 +74,7 @@
 					
 				<?php endif; ?>
 				
-			</di
+			</div>
 			<?php if(get_theme_mod('ys_sidebar_archive')) : else : ?>
 
 				<div class="col-sm-4">

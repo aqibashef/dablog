@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12'); ?>>
-
+    <div class="post-inner-wrapper">
 	<?php if(has_post_format('gallery')) : ?>
 	
 		<?php $images = get_post_meta( $post->ID, '_format_gallery_images', true ); ?>
@@ -157,5 +157,5 @@
 	<?php endif; ?>
 	
 	<?php comments_template( '', true );  ?>
-	
+    </div>
 </article>
