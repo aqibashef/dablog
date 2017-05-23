@@ -49,8 +49,12 @@
 				<?php endwhile; ?>
 				
 				<?php if(get_theme_mod('ys_archive_layout') == 'grid' || get_theme_mod('ys_archive_layout') == 'full_grid') : ?></ul><?php endif; ?>
-				
-					<?php wpwagon_pagination(); ?>
+
+                <?php the_posts_pagination(array(
+                    'mid_size'          => 2,
+                    'prev_text'         => __('<i class="fa fa-angle-left"></i> Previous', 'wpwagon'),
+                    'next_text'         => __('Next <i class="fa fa-angle-right"></i>', 'wpwagon')
+                )); ?>
 				
 				<?php else : ?>
 					
