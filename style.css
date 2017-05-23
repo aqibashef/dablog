@@ -104,16 +104,17 @@ a {
 #nav-wrapper .menu li a {
     color: #656565;
     line-height:50px;
-    font-size:11px;
+    font-size: 14px;
     font-weight:700;
     letter-spacing:2px;
-    text-transform:uppercase;
     display:block;
     -o-transition:.25s;
     -ms-transition:.25s;
     -moz-transition:.25s;
     -webkit-transition:.25s;
     transition:.25s;
+    font-family: 'Lora', serif;
+    font-style: italic;
 }
 
 .menu li a > i {
@@ -210,8 +211,7 @@ a {
 #top-social.nosearch { right:0; }
 #top-social a {
     color: #5b5b5b;
-    margin-left:10px;
-    font-size:14px;
+    margin-left: 15px;
     line-height:50px;
     display:inline-block;
     -o-transition:.25s;
@@ -666,15 +666,33 @@ p.lead:first-letter {
     clear:both;
 }
 .post-entry blockquote {
-    border-left:3px solid;
-    border-color:#ddd;
-    padding:0 18px;
+    border-left: none;
+    padding: 75px 18px;
+    text-align: center;
+    position: relative;
+    margin: 0px;
+    font-size: 20px;
+}
+.post-entry blockquote::before {
+    content: ',,';
+    font-size: 100px;
+    line-height: 0;
+    position: absolute;
+    transform: rotateZ(180deg) translateX(50%);
+    top: 25%;
+    left: 50%;
+    letter-spacing: -5px;
+    color: #888;
 }
 .post-entry blockquote p {
-    font-size:18px;
-    line-height:28px;
+    font-size: 20px;
+    line-height: 30px;
     font-style:italic;
     color:#888;
+}
+
+.post-entry blockquote .title-divider {
+    margin: 20px auto 0px auto;
 }
 
 .post-entry a:hover {
@@ -695,7 +713,9 @@ p.lead:first-letter {
 }
 
 .sticky.post .post-header { border:1px dashed #eee; padding:20px 0; }
-.bypostauthor  {}
+.bypostauthor  {
+    list-style: none;
+}
 .post-entry pre {
     overflow:auto;
 }
@@ -763,18 +783,19 @@ a.more-link:hover {
 
 /* Post Share **********/
 .post-share {
-    border-top:1px solid #e5e5e5;
     margin-top:38px;
     overflow:hidden;
+    border-bottom: 1px solid #ccc;
 }
 .post-share-box {
-    height: 30px;
     display: inline-block;
-    margin-top: 12px;
 }
 
-.post-share-box.share-buttons {
-    text-align: right;
+.post-share-box.share-buttons span {
+    color: #c2a88a;
+    font-style: italic;
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 .author_info .post-share-box {
@@ -830,8 +851,8 @@ a.more-link:hover {
 }
 
 .author-img {
-    float:left;
-    margin-right:16px;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .author-content  {
@@ -839,26 +860,44 @@ a.more-link:hover {
 }
 
 .author-content h5 a {
-    font-size:15px;
+    font-size: 16px;
     margin-bottom:6px;
-    text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing: 1px;
     font-weight:700;
-    color:#000;
+    color: #666;
     display:block;
+    font-family: 'Lora', serif;
+    font-style: italic;
+}
+
+.author-content h5 a:hover,
+.author-content h5 a:focus{
+    text-decoration: none;
 }
 
 .author-content p {
-    margin-bottom:9px;
+    margin-bottom: 20px;
     color:#666;
 }
 
 .author-content .author-social {
-    font-size:14px;
-    color:#bbb;
-    margin-right:8px;
+    font-size: 20px;
+    color: #666;
+    margin-right: 8px;
+    padding: 10px 15px;
+    background: #efefef;
+    text-align: center;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    transition-duration: 0.3s;
 }
 
+.author-content .author-social:hover,
+.author-content .author-social:focus {
+    text-decoration: none;
+    background: #c2a88a;
+    color: #fff;
+}
 .author_avatar {
     float: left;
     margin-right: 16px;
@@ -891,7 +930,7 @@ a.more-link:hover {
 .post-box-title:before {
     content: "";
     display: block;
-    border-top: solid 1px #e5e5e5;
+    border-top: solid 1px #ccc;
     width: 100%;
     height: 1px;
     position: absolute;
@@ -899,10 +938,72 @@ a.more-link:hover {
     z-index: 1;
 }
 .post-box-title span {
-    background: #fff;
+    background: #f7f7f7;
     padding: 0 24px;
     position: relative;
     z-index: 5;
+    color: #c2a88a;
+    border: 1px solid #ccc;
+    padding: 15px 30px;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.item-related-wrapper {
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+    margin: 2px;
+}
+
+.item-related
+.cat_info {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.item-related .cat {
+    margin-bottom: -12px;
+    display: block;
+}
+.item-related .cat a {
+    display:inline-block;
+    margin:0 3px 13px;
+    color: #c2a88a;
+    letter-spacing:2px;
+    padding-bottom:2px;
+    font-style: italic;
+    overflow-x: visible;
+    position: relative;
+}
+
+.item-related .cat a:hover,
+.item-related .cat a:focus{
+    text-decoration: none;
+}
+
+.item-related .cat a::before{
+    content: '';
+    position: absolute;
+    height: 0px;
+    border-bottom: 1px solid #c2a88a;
+    width: 100%;
+    top: 50%;
+    right: 110%;
+}
+.item-related .cat a::after{
+    content: '';
+    position: absolute;
+    height: 0px;
+    border-bottom: 1px solid #c2a88a;
+    width: 100%;
+    top: 50%;
+    left: 110%;
 }
 
 .item-related img {
@@ -911,15 +1012,16 @@ a.more-link:hover {
     height:auto;
 }
 .item-related h3 {
-    margin-bottom:4px;
-    line-height: 0.5em;
+    margin-bottom: 0px;
+    line-height: 1.5em;
 }
 .item-related h3 a {
-    font-size:14px;
-    color:#242424;
+    font-size: 16px;
+    color: #666;
+    text-transform: uppercase;
 }
 .item-related h3 a:hover {
-    text-decoration:underline;
+    text-decoration: none;
 }
 .item-related span.date {
     font-size:13px;
@@ -929,31 +1031,31 @@ a.more-link:hover {
 
 /* Post tags **********/
 .post-tags {
-    margin-top:25px;
-    margin-bottom:-15px;
-    padding-bottom:13px;
-    clear:both;
+    clear: both;
+    text-align: right;
 }
 .post-tags a {
-    font-size:9px !important;
     letter-spacing:1px;
-    text-transform:uppercase;
     background:#f2f2f2;
     color:#777;
-    padding:6px 7px 7px 8px;
-    margin-right:5px;
-    margin-bottom:8px;
+    padding: 5px 25px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     display:inline-block;
     -o-transition:.3s;
     -ms-transition:.3s;
     -moz-transition:.3s;
     -webkit-transition:.3s;
     transition:.3s;
+    font-family: 'Lora', serif;
+    color: #fff;
+    background: #666;
+    font-style: italic;
 }
-.post-tags a:hover {
+.post-tags a:hover, .post-tags a:focus {
     opacity:.7;
     text-decoration:none;
-    background:#aaa;
+    background: #c2a88a;
     color:#fff;
 }
 
@@ -1055,6 +1157,23 @@ a.more-link:hover {
     margin-top:60px;
 }
 
+.post-comments
+.post-box-title {
+    text-align: left;
+}
+
+.post-comments .post-box-title span {
+    border: none;
+    color: #666;
+    padding: 5px 0px;
+    font-size: 18px;
+}
+
+.post-comments .post-box-title:before {
+    content: "";
+    border: none;
+}
+
 .comments {
     margin-bottom:40px;
 }
@@ -1077,22 +1196,31 @@ a.more-link:hover {
 }
 .thecomment .comment-text h6.author, .thecomment .comment-text h6.author a {
     display:block;
-    font-size:13px;
-    text-transform:uppercase;
     letter-spacing:1px;
-    margin-bottom:6px;
-    color:#333;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 18px;
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-style: italic;
 }
-.thecomment .comment-text span.author a:hover {
-    text-decoration:underline;
+
+.thecomment .comment-text h6.author:hover, .thecomment .comment-text h6.author a:hover,
+.thecomment .comment-text h6.author:focus, .thecomment .comment-text h6.author a:focus {
+    text-decoration: none;
+}
+
+.thecomment .comment-text span.author a:hover,
+.thecomment .comment-text span.author a:focus {
+    text-decoration:none;
 }
 
 .thecomment .comment-text span.date {
-    font-size:12px;
-    color:#999;
+    font-size: 14px;
+    color: #999;
     font-style:italic;
     display:block;
-    margin-bottom:10px;
+    margin-bottom: 18px;
 }
 
 .thecomment .comment-text em {
@@ -1138,11 +1266,12 @@ a.more-link:hover {
 }
 
 #respond  h3 {
-    font-size:11px;
-    color:#999;
+    font-size: 16px;
+    color: #666;
     margin-bottom:20px;
     letter-spacing:2px;
-    text-transform:uppercase;
+    font-family: 'Lora', serif;
+    font-style: italic;
 }
 
 #respond h3 a {
@@ -1182,8 +1311,8 @@ a.more-link:hover {
     margin-right:10px;
     color:#999;
     margin-bottom:15px;
-    font-size:11px;
-    width:250px;
+    font-size: 14px;
+    display: block;
 }
 #respond input:focus {outline:none;}
 #respond .comment-form-url {
@@ -1200,14 +1329,17 @@ a.more-link:hover {
 #respond textarea:focus {outline:none;}
 
 #respond #submit {
-    padding:11px 20px;
+    padding: 10px 30px;
     width:auto;
-    font-size:10px;
+    font-size: 14px;
     margin-top:0;
+    font-style: italic;
+    color: #fff;
+    background: #c2a88a;
 }
 
 #respond #submit:hover {
-    background:#333;
+    background: #666;
     color:#FFF;
 }
 
@@ -1662,45 +1794,49 @@ a.more-link:hover {
 
 /* Footer social icons **********/
 #footer {
-    background:#00243b;
-    padding: 60px 0;
+    background: #fff;
+    padding: 20px 0;
 }
 #footer-social {
     text-align:center;
-    padding-bottom: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    float: right;
+    padding: 30px 0px;
 }
 #footer-social a {
-    color: rgb(255, 255, 255);
-    font-size: 11px;
-    text-transform:uppercase;
+    color: #c2a88a;
     letter-spacing: 1px;
-    margin: 0 16px;
+    margin: 0 7px;
     -o-transition:.3s;
     -ms-transition:.3s;
     -moz-transition:.3s;
     -webkit-transition:.3s;
     transition:.3s;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
 }
 #footer-social a:hover {
     color:#C39F76;
     text-decoration: none;
 }
 #footer-social a span {
-    margin-left:5px;
+    margin-left: 0px;
 }
 
 /* Footer Copyright **********/
 #footer-copyright {
-    text-align:center;
-    padding: 16px 0 0 0;
+    text-align: left;
+    padding: 30px 0;
+    float: left;
 }
 .copyright {
     color:#888;
-    font-size:12px;
+    font-family: 'Lora', serif;
+    font-style: italic;
 }
 .copyright a {
-    color:#fff;
+    color: #c2a88a;
 }
 
 /****************************************/
@@ -1754,12 +1890,11 @@ input, textarea {
     font-family: 'Droid Serif', serif;
 }
 input[type=submit] {
-    font-family:"Lato", sans-serif;
-    text-transform:uppercase;
+    font-family: "Lora", serif;
     letter-spacing:2px;
     background:#eee;
     border-radius:0;
-    font-size:10px;
+    font-size: 16px;
     color:#888;
     padding:11px 21px;
     margin-top:14px;
@@ -1771,7 +1906,6 @@ input[type=submit] {
     -webkit-transition:.3s;
     transition:.3s;
     cursor:pointer;
-    border-radius:30px;
     width:auto;
 }
 input[type=submit]:hover {
@@ -1962,7 +2096,7 @@ div.wpcf7 {
     padding: 15px;
 }
 .mc4wp-form button:hover, .mc4wp-form input[type=button]:hover, .mc4wp-form input[type=submit]:hover {
-    background:#C39F76;
+    background: #666;
 }
 
 .mc4wp-form input[type=date], .mc4wp-form input[type=email], .mc4wp-form input[type=tel], .mc4wp-form input[type=text], .mc4wp-form input[type=url], .mc4wp-form select, .mc4wp-form textarea {

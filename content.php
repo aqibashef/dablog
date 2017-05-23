@@ -109,28 +109,14 @@
 		
 		<?php wp_link_pages(); ?>
 		
-		<?php if(!get_theme_mod('ys_post_tags')) : ?>
-		<?php if(is_single()) : ?>
-		<?php if(has_tag()) : ?>
-			<div class="post-tags">
-				<?php the_tags("",""); ?>
-			</div>
-		<?php endif; ?>	
-		<?php endif; ?>
-		<?php endif; ?>
-		
 	</div>
     <?php if(is_single()): ?>
     <?php if(get_theme_mod('ys_post_comment_link') && get_theme_mod('ys_post_share') && get_theme_mod('ys_post_share_author')) : else : ?>
-	<div class="post-share row">
-        <?php if(!get_theme_mod('ys_post_comment_link')) : ?>
-		<div class="col-sm-6 post-share-box share-comments">
-			<?php comments_popup_link( '<span>0</span> Comments', '<span>1</span> Comment', '<span>%</span> Comments', '', ''); ?>
-		</div>
-		<?php endif; ?>
+	<div class="post-share">
 
 		<?php if(!get_theme_mod('ys_post_share')) : ?>
 		<div class="col-sm-6 post-share-box share-buttons">
+            <span>Share:</span>
 			<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook"></i></a>
 			<a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20<?php print wpwagon_social_title( get_the_title() ); ?>%20-%20<?php echo urlencode(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>
 			<?php $pin_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
@@ -139,6 +125,17 @@
 		</div>
 		<?php endif; ?>
 
+        <?php if(!get_theme_mod('ys_post_tags')) : ?>
+            <?php if(is_single()) : ?>
+                <?php if(has_tag()) : ?>
+                    <div class="col-sm-6">
+                        <div class="post-tags">
+                            <?php the_tags("",""); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+        <?php endif; ?>
 	</div>
 	<?php endif; ?>
     <?php endif; ?>
@@ -149,13 +146,12 @@
 		<?php get_template_part('inc/templates/about_author'); ?>
 	<?php endif; ?>
 	<?php endif; ?>
-	
-	<?php if(!get_theme_mod('ys_post_related')) : ?>
-	<?php if(is_single()) : ?>
-		<?php get_template_part('inc/templates/related_posts'); ?>
-	<?php endif; ?>
-	<?php endif; ?>
-	
-	<?php comments_template( '', true );  ?>
     </div>
+    <?php if(!get_theme_mod('ys_post_related')) : ?>
+        <?php if(is_single()) : ?>
+            <?php get_template_part('inc/templates/related_posts'); ?>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php comments_template( '', true );  ?>
 </article>
