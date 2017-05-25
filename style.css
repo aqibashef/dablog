@@ -473,7 +473,7 @@ ul.bxslider {
 .promo-overlay  h4 {
     color: #c2a88a;
     line-height:1.5em;
-    padding: 10px 60px;
+    padding: 10px 15px;
     display: block;
     font-family: 'Lora', serif;
     font-style: italic;
@@ -556,7 +556,7 @@ ul.sp-grid > li:nth-child(odd) {
     position: absolute;
     border-bottom: 1px solid #c2a88a;
     height: 0px;
-    width: 100%;
+    width: 50%;
     top: 50%;
     right: 110%;
 }
@@ -566,7 +566,7 @@ ul.sp-grid > li:nth-child(odd) {
     position: absolute;
     border-bottom: 1px solid #c2a88a;
     height: 0px;
-    width: 100%;
+    width: 50%;
     top: 50%;
     left: 110%;
 }
@@ -585,7 +585,7 @@ ul.sp-grid > li:nth-child(odd) {
     letter-spacing: 2px;
     text-transform:uppercase;
     color:#000;
-    font-weight: 700;
+    font-weight: 300;
     line-height:1.4em;
     -o-transition:.25s;
     -ms-transition:.25s;
@@ -625,6 +625,10 @@ ul.sp-grid > li:nth-child(odd) {
 }
 
 /* Post Entry **********/
+.post-entry {
+    padding: 0px 15px;
+}
+
 .post-entry p, .post-entry hr {
     margin-bottom:20px;
 }
@@ -789,6 +793,7 @@ a.more-link:hover {
 }
 .post-share-box {
     display: inline-block;
+    margin-bottom: 10px;
 }
 
 .post-share-box.share-buttons span {
@@ -1019,6 +1024,7 @@ a.more-link:hover {
     font-size: 16px;
     color: #666;
     text-transform: uppercase;
+    font-weight: 300;
 }
 .item-related h3 a:hover {
     text-decoration: none;
@@ -1032,7 +1038,7 @@ a.more-link:hover {
 /* Post tags **********/
 .post-tags {
     clear: both;
-    text-align: right;
+    margin-bottom: 15px;
 }
 .post-tags a {
     letter-spacing:1px;

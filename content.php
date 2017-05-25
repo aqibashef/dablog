@@ -114,21 +114,10 @@
     <?php if(get_theme_mod('ys_post_comment_link') && get_theme_mod('ys_post_share') && get_theme_mod('ys_post_share_author')) : else : ?>
 	<div class="post-share">
 
-		<?php if(!get_theme_mod('ys_post_share')) : ?>
-		<div class="col-sm-6 post-share-box share-buttons">
-            <span>Share:</span>
-			<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook"></i></a>
-			<a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20<?php print wpwagon_social_title( get_the_title() ); ?>%20-%20<?php echo urlencode(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>
-			<?php $pin_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
-			<a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $pin_image; ?>&description=<?php the_title(); ?>"><i class="fa fa-pinterest"></i></a>
-			<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
-		</div>
-		<?php endif; ?>
-
         <?php if(!get_theme_mod('ys_post_tags')) : ?>
             <?php if(is_single()) : ?>
                 <?php if(has_tag()) : ?>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="post-tags">
                             <?php the_tags("",""); ?>
                         </div>
@@ -136,6 +125,17 @@
                 <?php endif; ?>
             <?php endif; ?>
         <?php endif; ?>
+
+		<?php if(!get_theme_mod('ys_post_share')) : ?>
+		<div class="col-sm-12 post-share-box share-buttons">
+            <span>Share:</span>
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook"></i></a>
+            <a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20<?php print wpwagon_social_title( get_the_title() ); ?>%20-%20<?php echo urlencode(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>
+            <?php $pin_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>
+            <a data-pin-do="skipLink" target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $pin_image; ?>&description=<?php the_title(); ?>"><i class="fa fa-pinterest"></i></a>
+            <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
+        </div>
+		<?php endif; ?>
 	</div>
 	<?php endif; ?>
     <?php endif; ?>

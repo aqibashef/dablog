@@ -16,7 +16,8 @@
 				} else {
 					$args = array( 'cat' => $featured_cat, 'showposts' => $number );
 				}
-				
+
+                $featured_cat_term = get_term($featured_cat);
 			?>
 			
 			<?php $feat_query = new WP_Query( $args ); ?>
@@ -28,7 +29,7 @@
 				<div class="feat-overlay">
 					<div class="feat-inner text-center">
                         <div class="feat-inner-wrapper">
-                            <span class="cat"><?php the_category(' '); ?></span>
+                            <span class="cat"><a href="<?php echo get_term_link($featured_cat_term) ?>"><?php echo $featured_cat_term->name; ?></a></span>
                             <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
                             <?php if(!get_theme_mod('ys_post_share_author')) : ?>
                                 <span class="post-share-box share-author">
