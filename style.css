@@ -33,6 +33,10 @@ h1,h2,h3,h4,h5,h6, #nav-wrapper .menu li a, .feat-more, .post-share .post-share-
     font-weight: 100;
 }
 
+h1, h2, h3, h4, h5, h6{
+    margin: 20px 0px;
+}
+
 p {
     line-height:24px;
 }
@@ -365,6 +369,11 @@ ul.bxslider {
     left: 110%;
 }
 
+.feat-overlay .cat a:hover,
+.feat-overlay .cat a:focus{
+    text-decoration: none;
+}
+
 .feat-overlay h2 {
     color: #666;
     font-size:24px;
@@ -446,6 +455,7 @@ ul.bxslider {
     padding: 15px;
     background: #fff;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
+    margin: 5px 0px;
 }
 .promo-item {
     display: table;
@@ -519,6 +529,28 @@ ul.sp-grid > li:nth-child(odd) {
 }
 .full_grid ul.sp-grid > li:nth-child(odd) {
     clear: none;
+}
+
+.single .post-header .cat {
+    display: block;
+    font-family: 'Lora', serif;
+    color: #666;
+    font-style: italic;
+}
+
+.single .post-header .cat a {
+    color: #666;
+    font-weight: 300;
+}
+
+.single .post-header .cat a::before {
+    content: '';
+    border-bottom: none;
+}
+
+.single .post-header .cat a::after {
+    content: '';
+    border-bottom: none;
 }
 
 .post-header {
@@ -997,7 +1029,7 @@ a.more-link:hover {
     position: absolute;
     height: 0px;
     border-bottom: 1px solid #c2a88a;
-    width: 100%;
+    width: 50%;
     top: 50%;
     right: 110%;
 }
@@ -1006,7 +1038,7 @@ a.more-link:hover {
     position: absolute;
     height: 0px;
     border-bottom: 1px solid #c2a88a;
-    width: 100%;
+    width: 50%;
     top: 50%;
     left: 110%;
 }
@@ -1406,6 +1438,7 @@ a.more-link:hover {
 }
 .widget p {
     line-height:22px;
+    padding: 0px 15px;
 }
 .widget_categories a{
     font-style: italic;

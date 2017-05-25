@@ -361,7 +361,6 @@ function my_theme_register_required_plugins() {
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
 		)
-
 	);
 
 	// Change this to your theme text domain, used for internationalising strings
@@ -427,3 +426,5 @@ if (isset($_GET['home_layout'])) {
 else{
 	set_theme_mod('ys_home_layout', 'full_grid');
 }
+
+include_once get_template_directory().'/inc/primary-categories/primary-categories.php';

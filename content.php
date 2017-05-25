@@ -59,12 +59,19 @@
 	<?php endif; ?>
 
     <div class="post-header text-center">
-
+        <?php if(!is_single()): ?>
         <div class="cat_info clearfix">
             <?php if(!get_theme_mod('ys_post_cat')) : ?>
-                <span class="cat"><?php the_category(' '); ?></span>
+                <?php $primary_category = get_post_meta(get_the_ID(), 'primary_category')[0]; ?>
+                <?php if(isset($primary_category)): ?>
+                    <?php $category_term = get_term($primary_category); ?>
+                <?php else: ?>
+                    <?php $category_term = get_the_category()[0]; ?>
+                <?php endif; ?>
+                <span class="cat"><a href="<?php echo get_term_link($category_term->term_id); ?>"><?php echo $category_term->name; ?></a></span>
             <?php endif; ?>
         </div>
+        <?php endif; ?>
 
         <?php if(is_single()) : ?>
             <h1><?php the_title(); ?></h1>
@@ -83,7 +90,11 @@
         <?php if(!get_theme_mod('ys_post_date')) : ?>
             <div class="post-date"><?php the_time( get_option('date_format') ); ?></div>
         <?php endif; ?>
-
+        <?php if(is_single()): ?>
+            <div class="row cat">
+                In <?php the_category(', '); ?>
+            </div>
+        <?php endif; ?>
     </div>
 	
 	<div class="post-entry">
