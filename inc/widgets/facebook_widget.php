@@ -18,7 +18,7 @@ class themewagon_facebook_widget extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'themewagon_facebook_widget', 'description' => __('A widget that displays a Facebook Like Box', 'themewagon_facebook_widget') );
 
-		parent::__construct( 'themewagon_facebook_widget', 'Yellowstone: Facebook Like Box', $widget_ops );
+		parent::__construct( 'themewagon_facebook_widget', 'Da Blog: Facebook Like Box', $widget_ops );
 	}
 
 	/**

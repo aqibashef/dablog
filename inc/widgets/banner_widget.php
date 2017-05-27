@@ -18,7 +18,7 @@ class themewagon_banner_widget extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'themewagon_banner_widget', 'description' => __('An Banner Widget', 'themewagon_banner_widget') );
 
-		parent::__construct( 'themewagon_banner_widget', 'Yellowstone: Banner', $widget_ops );
+		parent::__construct( 'themewagon_banner_widget', 'Da Blog: Banner', $widget_ops );
 	}
 
 	/**

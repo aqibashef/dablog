@@ -18,7 +18,7 @@ class themewagon_about_widget extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'themewagon_about_widget', 'description' => __('An About Me Widget', 'themewagon_about_widget') );
 
-		parent::__construct( 'themewagon_about_widget', 'Yellowstone: About Me', $widget_ops );
+		parent::__construct( 'themewagon_about_widget', 'Da Blog: About Me', $widget_ops );
 	}
 
 	/**

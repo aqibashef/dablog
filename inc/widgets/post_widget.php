@@ -18,7 +18,7 @@ class themewagon_latest_news_widget extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'themewagon_latest_news_widget', 'description' => __('A widget that displays your latest posts from all categories or a certain', 'themewagon_latest_news_widget') );
 
-		parent::__construct( 'themewagon_latest_news_widget', 'Yellowstone: Latest Posts', $widget_ops );
+		parent::__construct( 'themewagon_latest_news_widget', 'Da Blog: Latest Posts', $widget_ops );
 	}
 
 	/**

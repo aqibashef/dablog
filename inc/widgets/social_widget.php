@@ -18,7 +18,7 @@ class themewagon_social_widget extends WP_Widget {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'themewagon_social_widget', 'description' => __('A widget that displays your social icons', 'themewagon_social_widget') );
 		
-		parent::__construct( 'themewagon_social_widget', 'Yellowstone: Social Icons', $widget_ops );
+		parent::__construct( 'themewagon_social_widget', 'Da Blog: Social Icons', $widget_ops );
 	}
 
 	/**
