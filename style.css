@@ -203,7 +203,7 @@ a {
 #nav-wrapper .menu li.current-menu-item a{
     border-bottom: 1px solid #c2a88a;
     color: #c2a88a;
-    padding: 2px;
+    padding: 15px 20px;
 }
 
 /* Social and Search **********/
