@@ -278,7 +278,6 @@ a {
 #header, #header.noslider {
     padding-top: 60px;
     text-align:center;
-    margin-bottom:60px;
 }
 #logo {
 }
@@ -296,7 +295,7 @@ ul.bxslider {
 /****************************************/
 
 .featured-area {
-    margin-bottom: 75px;
+    margin-bottom: 60px;
 }
 .featured-area.nopromo {
     margin-bottom:60px;
@@ -505,7 +504,7 @@ ul.bxslider {
 /****************************************/
 
 .post {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     padding: 0 15px;
 }
 
@@ -539,7 +538,7 @@ ul.sp-grid > li:nth-child(odd) {
 }
 
 .single .post-header .cat a {
-    color: #666;
+    color: #c2a88a;
     font-weight: 300;
 }
 
@@ -1099,7 +1098,7 @@ a.more-link:hover {
 
 /* Grid Layout **********/
 .grid-item {
-    margin-bottom:45px;
+    margin-bottom: 60px;
     background: #fff;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.25);
     padding-bottom: 20px;
@@ -1706,9 +1705,9 @@ a.more-link:hover {
 /****************************************/
 
 .pagination {
-    margin-top:55px;
+    margin-top: 60px;
     overflow:hidden;
-    margin-bottom:45px;
+    margin-bottom: 60px;
     border-top: 1px solid #eaeaea;
     text-align: center;
     padding-top: 20px;
