@@ -203,6 +203,10 @@ a {
 #nav-wrapper .menu li.current-menu-item a{
     border-bottom: 1px solid #c2a88a;
     color: #c2a88a;
+    padding: 2px 20px;
+}
+
+#nav-wrapper .menu .sub-menu li a {
     padding: 15px 20px;
 }
 
@@ -602,6 +606,14 @@ ul.sp-grid > li:nth-child(odd) {
     left: 110%;
 }
 
+.list-content .post-header .cat a::before{
+    content: none;
+}
+
+.list-content .post-header .cat a::after{
+    content: none;
+}
+
 .post-header h2, .post-header h1 {
     margin-bottom:10px;
     display: block;
@@ -658,6 +670,10 @@ ul.sp-grid > li:nth-child(odd) {
 /* Post Entry **********/
 .post-entry {
     padding: 0px 15px;
+}
+
+.list-content .post-entry {
+    padding: 0px;
 }
 
 .post-entry p, .post-entry hr {
@@ -1138,8 +1154,11 @@ a.more-link:hover {
 .list-item {
     overflow:hidden;
     margin-bottom:35px;
-    padding-bottom:35px;
+    padding-bottom: 10px;
     border-bottom:1px solid #eee;
+    padding-top: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
 }
 .list-grid-layout .list-item {
     margin-bottom:35px;

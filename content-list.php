@@ -32,7 +32,7 @@
 		
 		<div class="post-entry">
 							
-			<p><?php echo ys_string_limit_words(get_the_excerpt(), 39); ?>&hellip;</p>
+			<p><?php echo ys_string_limit_words(get_the_excerpt(), 10); ?>&hellip;</p>
 							
 		</div>
 		
